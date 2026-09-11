@@ -1,3 +1,6 @@
+/* Se creó el modulo libr, con sus atributos y metodos pertenecientes a la clase
+ *
+ */
 public class Libro {
     private String tituloLibro; 
     private String autorLibro; 

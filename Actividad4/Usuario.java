@@ -1,3 +1,5 @@
+/* Se creó la clase usuario que contiene los métodos y atributos pertenecientes a la clase
+ */
 public class Usuario {
     private String nombreUsuario; 
     private String correoUsuario; 
