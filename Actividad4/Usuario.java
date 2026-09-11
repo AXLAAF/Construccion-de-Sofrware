@@ -1,7 +1,13 @@
 public class Usuario {
     private String nombreUsuario; 
     private String correoUsuario; 
-    private int idUsuario; 
+    private int idUsuario;
+
+    public Usuario(String nombreUsuario, String correoUsuario, int idUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        this.correoUsuario = correoUsuario;
+        this.idUsuario = idUsuario;
+    }
 
     public void mostrarUsuario() { 
         System.out.println("Usuario: " + nombreUsuario); 
