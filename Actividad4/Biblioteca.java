@@ -1,11 +1,27 @@
 // se agregaron los metodos de las otras clases 
 public class Biblioteca {
+  
     public static void main(String[] args) {
-        Libro libro = new Libro("El Quijote", "Miguel de Cervantes", "978-8408077947", 1605);
-        Usuario usuario = new Usuario("Juan Pérez", "juan@email.com", 1);
         
-        libro.mostrarLibro();
-        System.out.println();
-        usuario.mostrarUsuario();
-    }
-} 
+        }
+    
+    public void mostrarLibro(Libro libro) {
+            libro.mostrarLibro();
+        }
+  
+    public void mostrarUsuario(Usuario usuario) {
+            usuario.mostrarUsuario();
+        }
+  
+    public void mostrarPrestamo(Prestamo prestamo) {
+            prestamo.mostrarPrestamo();
+        }
+  
+    public void aplicarMulta(Prestamo prestamo) {
+            prestamo.aplicarMulta();
+        }
+  
+    public double calcularMulta(Prestamo prestamo) {
+            return prestamo.calcularMulta();
+        }
+}
