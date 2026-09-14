@@ -5,6 +5,10 @@ public class Pedido {
     private final boolean esDiaEspecial;
     private final String destino;
 
+    public Pedido() {
+        this(null, 0.0, false, null);
+    }
+
     public Pedido(String tipoCliente, double montoBase, boolean esDiaEspecial, String destino) {
         this.tipoCliente = tipoCliente;
         this.montoBase = montoBase;
@@ -48,7 +52,20 @@ public class Pedido {
             return;
         }
 
-        imprimirResumen(montoBase, descuento, costoEnvio, totalFinal);
+        new SistemaPedidos().imprimirResumen(montoBase, descuento, costoEnvio, totalFinal);
+    }
+
+    public void procesarPedido(String tipoCliente, double montoTotal, boolean esDiaEspecial, String destino) {
+        Pedido pedido = new Pedido(tipoCliente, montoTotal, esDiaEspecial, destino);
+        pedido.procesarPedido();
+    }
+
+    public void procesarPedido(Pedido pedido) {
+        if (pedido == null) {
+            System.out.println("Error: El pedido no puede ser nulo.");
+            return;
+        }
+        pedido.procesarPedido();
     }
 
     public double calcularDescuento() {
@@ -90,14 +107,5 @@ public class Pedido {
 
     public double calcularTotal() {
         return montoBase - calcularDescuento() + calcularCostoEnvio();
-    }
-
-    public void imprimirResumen(double montoBase, double descuento, double costoEnvio, double totalFinal) {
-        System.out.println("=== RESUMEN DE COMPRA ===");
-        System.out.println("Monto Base: $" + montoBase);
-        System.out.println("Descuento Aplicado: $" + descuento);
-        System.out.println("Costo de Envío: $" + costoEnvio);
-        System.out.println("Total a Pagar: $" + totalFinal);
-        System.out.println("Estado: APROBADO");
     }
 }

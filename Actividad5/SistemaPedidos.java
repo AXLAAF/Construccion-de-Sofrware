@@ -17,4 +17,13 @@ public class SistemaPedidos {
         }
         pedido.procesarPedido();
     }
+
+    public void imprimirResumen(double montoBase, double descuento, double costoEnvio, double totalFinal) {
+        System.out.println("=== RESUMEN DE COMPRA ===");
+        System.out.println("Monto Base: $" + montoBase);
+        System.out.println("Descuento Aplicado: $" + descuento);
+        System.out.println("Costo de Envío: $" + costoEnvio);
+        System.out.println("Total a Pagar: $" + totalFinal);
+        System.out.println("Estado: APROBADO");
+    }
 }
