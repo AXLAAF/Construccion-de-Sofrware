@@ -29,8 +29,8 @@ public class Pedido {
     }
 
     /**
-     * Calcula el descuento aplicable según el tipo de cliente y si es día especial.
-     * Aplica switch expressions para eliminar anidamientos múltiples (cohesión funcional).
+     * Calcula el descuento que se aplica dependiendo del tipo de cliente y si es día especial.
+     * Aplica switch expressions.
      *
      * @return monto total del descuento a aplicar.
      */
