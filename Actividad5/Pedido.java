@@ -28,12 +28,29 @@ public class Pedido {
         return destino;
     }
 
-    /**
-     * Calcula el descuento que se aplica dependiendo del tipo de cliente y si es día especial.
-     * Aplica switch expressions.
-     *
-     * @return monto total del descuento a aplicar.
-     */
+    public void procesarPedido() {
+        if (montoBase <= 0) {
+            System.out.println("El monto debe ser mayor a cero.");
+            return;
+        }
+
+        if (tipoCliente == null) {
+            System.out.println("Tipo de cliente inválido.");
+            return;
+        }
+
+        double descuento = calcularDescuento();
+        double costoEnvio = calcularCostoEnvio();
+        double totalFinal = calcularTotal();
+
+        if (totalFinal <= 0) {
+            System.out.println("Error en la transacción.");
+            return;
+        }
+
+        imprimirResumen(montoBase, descuento, costoEnvio, totalFinal);
+    }
+
     public double calcularDescuento() {
         if (tipoCliente == null) {
             return 0.0;
@@ -58,12 +75,6 @@ public class Pedido {
         return descuentoBase + descuentoDiaEspecial;
     }
 
-    /**
-     * Calcula el costo de envío basándose en el destino y el monto base del pedido.
-     * Utiliza una estructura switch simplificada.
-     *
-     * @return costo correspondiente al envío.
-     */
     public double calcularCostoEnvio() {
         if (destino == null) {
             return 0.0;
@@ -77,12 +88,16 @@ public class Pedido {
         };
     }
 
-    /**
-     * Calcula el total final a pagar por el pedido.
-     *
-     * @return monto base menos descuento más costo de envío.
-     */
     public double calcularTotal() {
         return montoBase - calcularDescuento() + calcularCostoEnvio();
+    }
+
+    public void imprimirResumen(double montoBase, double descuento, double costoEnvio, double totalFinal) {
+        System.out.println("=== RESUMEN DE COMPRA ===");
+        System.out.println("Monto Base: $" + montoBase);
+        System.out.println("Descuento Aplicado: $" + descuento);
+        System.out.println("Costo de Envío: $" + costoEnvio);
+        System.out.println("Total a Pagar: $" + totalFinal);
+        System.out.println("Estado: APROBADO");
     }
 }
