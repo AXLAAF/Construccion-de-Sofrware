@@ -16,7 +16,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "nombre: " + nombre + " " + apellidoPaterno + " " + apellidoMaterno + " Numero de cuenta: " + numeroDeCuenta;
+        return "nombre: " + nombre + "apellido Paterno: " + apellidoPaterno + "apellido materno: " + apellidoMaterno + " Numero de cuenta: " + numeroDeCuenta;
     }
 
     public String getNombre() {
