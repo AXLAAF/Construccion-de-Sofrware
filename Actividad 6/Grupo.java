@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Grupo {
     private Profesor profesor;
@@ -29,4 +29,8 @@ public class Grupo {
     public void setAlumnos(List<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
+
+    public void agregarAlumno(Alumno alumno) {
+    alumnos.add(alumno);
+}
 }
